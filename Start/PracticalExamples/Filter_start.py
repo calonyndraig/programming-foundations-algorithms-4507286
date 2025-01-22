@@ -8,10 +8,20 @@ items = ["apple", "pear", "orange", "banana", "apple",
          "apple", "kiwi", "pear", "apple", "orange"]
 
 # TODO: create a set to perform a filter
-
+# long way
+unique_items = set()
 
 # TODO: loop over each item and add to the set
+
+for item in items:
+  unique_items.add(item)
+print(unique_items)
+# easy way
+items = set(items)
+print(items)
 
 
 # TODO: Count the unique letters in a sentence
 sentence = "The quick brown fox jumps over the lazy dog."
+unique_items = {c for c in sentence.lower() if c.isalpha()}
+print(unique_items)

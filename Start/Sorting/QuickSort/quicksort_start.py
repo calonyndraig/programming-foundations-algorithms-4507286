@@ -17,23 +17,30 @@ def quickSort(dataset, first, last):
 
 def partition(datavalues, first, last):
     # TODO: choose the first item as the pivot value
-    
+    pivotvalue = datavalues[first]
     # TODO: establish the upper and lower indexes
-
+    lower = first + 1
+    upper = last
     # start searching for the crossing point
     done = False
     while not done:
         # TODO: advance the lower index
-
+        while lower <= upper and datavalues[lower] <= pivotvalue:
+            lower += 1
         # TODO: advance the upper index
-
+        while datavalues[upper] >= pivotvalue and upper >= lower:
+            upper -= 1
         # TODO: if the two indexes cross, we have found the split point
-        pass
+        if upper < lower:
+            done = True
+        else:
+            datavalues[upper], datavalues[lower] = datavalues[lower], datavalues[upper]
 
     # TODO: when the split point is found, exchange the pivot value
+    datavalues[first], datavalues[upper] = datavalues[upper], datavalues[first]
 
     # TODO: return the split point index
-
+    return upper
 
 # test the merge sort with data
 print(items)
